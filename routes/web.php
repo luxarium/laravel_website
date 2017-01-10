@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use App\DB;
 use App\Users;
 use App\Http\Controllers\Auth\RegisterController;
+use App\offer;
 //use App\Http\Requests;
 
 Route::group(['middleware' => ['web']], function () {
@@ -24,23 +25,30 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 //Route::get('/register','RegisterController@create');
-//Route::get('/register', function (Request $request) {
-//    $username = $request['username'];
-//    $password = $request['password'];
-//    $firstName = $request ['firstName'];
-//    $lastName = $request ['lastName'];
-//    $city = $request ['city'];
-//    $users = new Users();
-//    $users -> user_id = $username;
-//    $users -> password = $password;
-//    $users -> firstName = $firstName;
-//    $users -> lastName = $lastName;
-//    $users -> city = $city;
-//    $users -> save();
-//    return redirect("/");
-//
-//});
+Route::post('/registers', function (Request $request) {
+    dd($request -> username);
+    $username = $request['username'];
+    $password = $request['password'];
+    $firstName = $request ['firstName'];
+    $lastName = $request ['lastName'];
+    $city = $request ['city'];
+    $users = new Users();
+    $users -> user_id = $username;
+    $users -> password = $password;
+    $users -> firstName = $firstName;
+    $users -> lastName = $lastName;
+    $users -> city = $city;
+    $users -> save();
+
+    dd("ok");
+    return redirect("/");
+
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::post('/home', 'HomeController@index');
+Route::post('/showAllPost', function(Request $request)
+{
+    return offer::all();
+});

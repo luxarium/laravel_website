@@ -17,6 +17,10 @@ class api extends Controller
     {
             dd($request);
             return redirect("/");
+    }
+    public function showAllPost()
+    {
 
     }
+
 }
