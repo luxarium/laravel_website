@@ -325,7 +325,7 @@ try {
                     <!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
                     <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
-                    <li><a href="Sections.html" class="Per-Font">تخفیف ها</a>
+                    <li><a href="Sections.php" class="Per-Font">تخفیف ها</a>
                         <ul>
                             <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>
                             <li><a href="#">هتل</a></li>

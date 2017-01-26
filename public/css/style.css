@@ -1707,34 +1707,72 @@ img {
 	max-width: 100%;
 }
 
+@font-face {
+	font-family: EntezareZohoorB3;
+	src: url(/fonts/EntezarB3_v2.0.1.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: EntezareZohoor3;
+	src: url(/fonts/Entezar3_v2.0.1.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: EntezareZohoor2;
+	src: url(/fonts/Entezar2_v2.0.1.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: EntezareZohoor1;
+	src: url(/fonts/Entezar1_v2.0.1.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: Badr;
+	src: url(/fonts/B_Badr.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: Zar;
+	src: url(/fonts/B_Zar.ttf) format("truetype");
+}
+
 .Per-Font {
-    font-family: "A EntezareZohoor B3";
+    font-family: EntezareZohoorB3;
     font-size: x-large;
     direction: rtl;
 
 }
 
+.Per-Font li a{
+	font-family: EntezareZohoorB3;
+	font-size: x-large;
+	direction: rtl;
+
+}
+
 .Per-Header {
-        font-family: "A EntezareZohoor 3 **";
+        font-family: EntezareZohoor3;
 
 }
 
 .Per-Font2 {
-        font-family: "A EntezareZohoor 2 **";
+        font-family: EntezareZohoor2;
     font-size: x-large;
     direction: rtl;
 }
 
 .Per-Font-btn {
-    font-family: "B Badr";
+    font-family: Badr;
 }
 
 .Per-Font-Parag {
-    font-family: "B Zar";
+    font-family: Zar;
 }
 
 .Per-Header2 {
-    font-family: "A EntezareZohoor 1 **";
+    font-family: EntezareZohoor1;
+	text-align: right;
 
 }
 
