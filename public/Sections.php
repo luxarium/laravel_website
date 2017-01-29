@@ -219,9 +219,9 @@ try {
                   <div class="containerExtra">
                   <div id="container" class="clearfix Per-Div">
 
-                    <div class="element transition هتل" data-category="transition">
-                    	<a href="Item_single.php" class="thumb"><figure class="img-polaroid"><img src="img/Catg_2.jpg" alt=""></figure></a><span class="description">هتل شماره 1</span>
-                    </div>
+                    <a href="Item_single.php" class="element transition هتل thumb" data-category="transition">
+                    	<figure class="img-polaroid"><img src="img/Catg_2.jpg" alt=""></figure><span class="description">هتل شماره 1</span>
+                    </a>
                     <div class="element transition هتل" data-category="transition">
                     	<a href="Item_single.php" class="thumb"><figure class="img-polaroid"><img src="img/Event_1%20-%20Copy.jpg" alt=""></figure></a><span class="description">هتل شماره 2</span>
                     </div>

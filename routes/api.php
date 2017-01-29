@@ -18,6 +18,9 @@ Route::get('/register' , function(Request $request){
     return "ok";
 });
 
+Route::get('/loginn',function(Request $request,$username,$password){
+    dd($username,$password);
+});
 
 Route::get('/user', function (Request $request) {
     return $request->user();
