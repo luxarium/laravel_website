@@ -16,7 +16,7 @@ use App\DB;
 use App\Users;
 use App\Http\Controllers\Auth\RegisterController;
 use App\offer;
-use App\order_detai;
+use App\order_detail;
 
 //use App\Http\Requests;
 
@@ -70,16 +70,17 @@ Route::post('/purchases', function (Request $request) {
     $offer_id = $request ->offer_id;
     $count = $request -> count ;
     $username = $request -> username;
-    $user = Users::where('username','=' , $username);
-    $offer = offer::where('offer_id' , '=' , $offer_id);
-    dd($offer );
+    $user = Users::where('username', $username)->first();
+    $offer = offer::where('offer_id','=' , $offer_id)->first();
     $order_detail = new order_detail();
-    $order_detail -> offer_id = (string)$offer -> offer_id;
+    $order_detail -> offer_id = $offer_id;
     $order_detail -> count = $count ;
     $order_detail -> item_price = $offer -> priceReal;
     $order_detail -> totalPriceReal = $count * $order_detail -> item_price;
+    $token_key = str_random(40);
+    $order_detail -> purches_token = $token_key;
     $order_detail -> save();
-    dd($order_detail -> totalPriceReal);
+    dd($order_detail -> purches_token);
 });
 Route::post('/home', 'HomeController@index');
 Route::post('/showAllPost', function (Request $request) {
