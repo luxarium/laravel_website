@@ -530,10 +530,10 @@ header {
 	margin-top: 30px;
 	padding-right: 10px;
     direction: rtl;
-    font-family: "B Nazanin";
+    font-family: Zar;
 }
 .list3title1 {
-	font-family: "A EntezareZohoor C3";
+	font-family: EntezareZohoorC3;
     direction: rtl;
 	font-size: 26px;
 	line-height: 28px;
@@ -543,7 +543,7 @@ header {
     text-align: right;
 }
 .list3title2 {
-	font-family: "A EntezareZohoor 1 **";
+	font-family: EntezareZohoor1;
     direction: rtl;
 	font-size: 20px;
 	line-height: 22px;
@@ -554,7 +554,7 @@ header {
 }
 .list3title3 {
 	margin-bottom: 10px;
-	font-family: "B Zar";
+	font-family: Zar;
     direction: rtl;
 	font-size: 15px;
 	line-height: 20px;
@@ -611,7 +611,7 @@ header {
 	float: left;
 	display: block;
 	text-transform: uppercase;
-	font-family: "B Zar";
+	font-family: Zar;
 	font-size: 18px;
 	line-height: 20px;
 	font-weight: normal;
@@ -627,7 +627,7 @@ header {
 }
 /*----------locations---------*/
 .locations .title4 {
-	font-family: "B Zar";
+	font-family: Zar;
 	font-size: 19px;
 	line-height: 26px;
 	font-weight: normal;
@@ -969,7 +969,7 @@ hr.line2 {
 	background: none;
 	border: none;
 	text-transform: uppercase;
-	font-family: "A EntezareZohoor 1 **";
+	font-family: EntezareZohoor1;
 	font-size: 18px;
 	line-height: 20px;
 	color: #797979;
@@ -1708,33 +1708,43 @@ img {
 }
 
 @font-face {
+	font-family: EntezareZohoorC3;
+	src: url(../fonts/EntezarC3_v2.0.1.ttf) format("truetype");
+}
+
+@font-face {
 	font-family: EntezareZohoorB3;
-	src: url(/fonts/EntezarB3_v2.0.1.ttf) format("truetype");
+	src: url(../fonts/EntezarB3_v2.0.1.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: EntezareZohoorB4;
+	src: url(../fonts/EntezarB4_v2.0.1.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: EntezareZohoor3;
-	src: url(/fonts/Entezar3_v2.0.1.ttf) format("truetype");
+	src: url(../fonts/Entezar3_v2.0.1.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: EntezareZohoor2;
-	src: url(/fonts/Entezar2_v2.0.1.ttf) format("truetype");
+	src: url(../fonts/Entezar2_v2.0.1.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: EntezareZohoor1;
-	src: url(/fonts/Entezar1_v2.0.1.ttf) format("truetype");
+	src: url(../fonts/Entezar1_v2.0.1.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: Badr;
-	src: url(/fonts/B_Badr.ttf) format("truetype");
+	src: url(../fonts/B_Badr.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: Zar;
-	src: url(/fonts/B_Zar.ttf) format("truetype");
+	src: url(../fonts/B_Zar.ttf) format("truetype");
 }
 
 .Per-Font {
@@ -1798,14 +1808,14 @@ img {
 }
 
 .pro-info p{
-    font-family: "A EntezareZohoor B4";
+    font-family: EntezareZohoorB4;
     color: white;
     font-size: xx-large;
     direction: rtl;
 }
 
 .Per-Div span{
-    font-family: "A EntezareZohoor B4";
+    font-family: EntezareZohoorB4;
     font-size: 14px;
 }
 

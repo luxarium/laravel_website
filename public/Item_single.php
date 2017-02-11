@@ -42,9 +42,9 @@
 	<script src="js/jquery.equalheights.js"></script>
 
 <!-- Fonts -->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700"	   type="text/css" media="all">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"	   type="text/css" media="all">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500" type="text/css" media="all">
+<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700"	   type="text/css" media="all">-->
+<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"	   type="text/css" media="all">-->
+<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500" type="text/css" media="all">-->
 <!-- //Fonts -->
 
 <!-- Font-Awesome-File-Links -->
@@ -403,21 +403,21 @@
 							</span>
 						</div>
 						<div class="single-price">
-							<ul>
-								<li>225,000,000 <small>10% تخفیف</small></li>
-								<li><del>250,000,000</del></li>
+							<ul class="Per-Font">
+								<li >225،000،000 <small class="Per-Font">10% تخفیف</small></li>
+								<li class="Per-Font"><del>250،000،000</del></li>
 								<li> </li>
 <!--								<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i>خرید</a></li>-->
 							</ul>
 						</div>
-						<p class="single-price-text">سفر لوکس به یادماندی را با قیمت باورنکردنی تجربه کنید</p>
+						<p class="single-price-text Per-Font2">سفر لوکس به یادماندی را با قیمت باورنکردنی تجربه کنید</p>
 						<div class="cbp-pgcontent aitssinglew3" id="mens_single">
-							<button class="btn btn-danger agileits my-cart-btn" data-id="mens_single" data-name="Black Leather Jacket" data-summary="Black Leather Jacket" data-price="67.5" data-quantity="1" data-image="images/s1.jpg"><i class="fa fa-cart-plus" aria-hidden="true"></i>خرید</button>
+							<button class="btn btn-danger agileits my-cart-btn Per-Font-btn" data-id="mens_single" data-name="Black Leather Jacket" data-summary="Black Leather Jacket" data-price="67.5" data-quantity="1" data-image="images/s1.jpg"><i class="fa fa-cart-plus" aria-hidden="true"></i>خرید</button>
 							<div class="clearfix"></div>
 						</div>
 
 						<div class="agilesocialwthree">
-							<h4>این خدمت را به اشتراک بگذارید</h4>
+							<h4 class="Per-Header">این خدمت را به اشتراک بگذارید</h4>
 							<ul class="social-icons">
 								<li><a href="#" class="facebook w3ls" title="Go to Our Facebook Page"><i class="fa w3ls fa-facebook-square" aria-hidden="true"></i></a></li>
 								<li><a href="#" class="twitter w3l" title="Go to Our Twitter Account"><i class="fa w3l fa-twitter-square" aria-hidden="true"></i></a></li>
@@ -561,7 +561,7 @@
                 </ul>-->
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-				<a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>
+<!--				<a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>-->
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 footercol">
 				<p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>

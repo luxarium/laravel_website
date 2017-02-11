@@ -148,7 +148,7 @@ try {
 
     }
         // Initialize the gallery
-        $('.thumb').touchTouch();
+        //$('.thumb').touchTouch();
 
     });
 
@@ -249,8 +249,8 @@ try {
                     <div class="element transition مرکزخرید" data-category="transition">
                     	<a href="Item_single.php" class="thumb"><figure class="img-polaroid"><img src="img/Event_4.jpg" alt=""></figure></a><span class="description">مرکز خرید شماره 1</span>
                     </div>
-                    <div class="element transition ماساژ" data-category="transition">
-                    	<a href="Item_single.php" class="thumb"><figure class="img-polaroid"><img src="img/Catg_3%20-%20Copy.jpg" alt=""></figure></a><span class="description">ماساژ شماره 1</span>
+                    <div class="element transition ماساژ" >
+                    	<a href="Item_single.php" class="thumb"><figure ><img src="img/Catg_3%20-%20Copy.jpg" alt=""></figure></a><span class="description">ماساژ شماره 1</span>
                     </div>
 		       </div>
                </div>
@@ -272,7 +272,7 @@ try {
                 </ul>-->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>
+<!--                <a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>-->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>
