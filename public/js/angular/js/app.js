@@ -35,5 +35,9 @@ angular.module('luxarium', [])
             {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
             {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
         ]
+        $scope.details = function(item)
+        {
+            console.log(item);
+        }
     })
 
