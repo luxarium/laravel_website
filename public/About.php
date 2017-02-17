@@ -350,58 +350,58 @@ try {
         <div class="container">
             <div class="row">
                 <!--                <div class="col-lg-7 col-md-7 col-sm-7 reserve_table">-->
-                <!--                    <h2>--><?php //echo "test"?><!--</h2>-->
+
                 <div style="height: 50px"></div>
 
                 <div class="login">
-                    <form action="/register" method="get">
+                    <form action="/registers" method="post">
                         <ul>
                             <li>
-                                <a href="#" class=" icon user"></a><input name="username" type="text" class="text"
+                                <a href="#" class=" icon user"></a><input name="username" type="text" class="text Per-Font-btn"
                                                                           placeholder="نام کاربری"
                                                                           onfocus="this.placeholder = '';"
                                                                           onblur="if (this.placeholder == '') {this.placeholder = 'نام کاربری';}">
                             </li>
                             <li>
-                                <a href="#" class=" icon user"></a><input name="firstName" type="text" class="text"
+                                <a href="#" class=" icon user"></a><input name="firstName" type="text" class="text Per-Font-btn"
                                                                           placeholder="نام"
                                                                           onfocus="this.placeholder = '';"
                                                                           onblur="if (this.placeholder == '') {this.placeholder = 'نام';}">
                             </li>
                             <li>
-                                <a href="#" class=" icon user"></a><input name="lastName" type="text" class="text"
+                                <a href="#" class=" icon user"></a><input name="lastName" type="text" class="text Per-Font-btn"
                                                                           placeholder="نام خانوادگی"
                                                                           onfocus="this.placeholder = '';"
                                                                           onblur="if (this.placeholder == '') {this.placeholder = 'نام خانوادگی';}">
                             </li>
-                            <div class="dumy">
-                                <li class="psw">
+<!--                            <div class="dumy">-->
+                                <li>
                                     <a href="#" class=" icon user"></a><input name="city" type="text" placeholder="شهر"
-                                                                              onfocus="this.placeholder = '';"
+                                                                              onfocus="this.placeholder = '';" class="Per-Font-btn"
                                                                               onblur="if (this.placeholder == '') {this.placeholder = 'شهر';}">
                                 </li>
-                                <li class="psw two">
-                                    <a href="#" class=" icon user"></a><input name="state" type="text"
-                                                                              placeholder="استان"
-                                                                              onfocus="this.placeholder = '';"
-                                                                              onblur="if (this.placeholder == '') {this.placeholder = 'استان';}">
-                                </li>
+<!--                                <li class="psw two">-->
+<!--                                    <a href="#" class=" icon user"></a><input name="state" type="text"-->
+<!--                                                                              placeholder="استان"-->
+<!--                                                                              onfocus="this.placeholder = '';"-->
+<!--                                                                              onblur="if (this.placeholder == '') {this.placeholder = 'استان';}">-->
+<!--                                </li>-->
                                 <div class="clear"></div>
-                            </div>
+<!--                            </div>-->
+<!--                            <li>-->
+<!--                                <a href="#" class=" icon user"></a><input name="address" type="text" class="text"-->
+<!--                                                                          placeholder="آدرس پستی"-->
+<!--                                                                          onfocus="this.placeholder = '';"-->
+<!--                                                                          onblur="if (this.placeholder == '') {this.placeholder = 'آدرس پستی';}">-->
+<!--                            </li>-->
                             <li>
-                                <a href="#" class=" icon user"></a><input name="address" type="text" class="text"
-                                                                          placeholder="آدرس پستی"
-                                                                          onfocus="this.placeholder = '';"
-                                                                          onblur="if (this.placeholder == '') {this.placeholder = 'آدرس پستی';}">
-                            </li>
-                            <li>
-                                <a href="#" class=" icon user"></a><input name="tel" type="text" class="text"
+                                <a href="#" class=" icon user"></a><input name="tel" type="text" class="text Per-Font-btn"
                                                                           placeholder="تلفن"
                                                                           onfocus="this.placeholder = '';"
                                                                           onblur="if (this.placeholder == '') {this.placeholder = 'تلفن';}">
                             </li>
                             <li>
-                                <a href="#" class=" icon mail"></a><input name="email" type="text" class="text"
+                                <a href="#" class=" icon mail"></a><input name="email" type="text" class="text Per-Font-btn"
                                                                           placeholder="آدرس ایمیل"
                                                                           onfocus="this.placeholder = '';"
                                                                           onblur="if (this.placeholder == '') {this.placeholder = 'آدرس ایمیل';}">
@@ -410,23 +410,23 @@ try {
                             <div class="dumy">
                                 <li class="psw">
                                     <a href="#" class=" icon key"></a><input type="password" placeholder="تکرار رمز"
-                                                                             onfocus="this.placeholder = '';"
+                                                                             onfocus="this.placeholder = '';" class="Per-Font-btn"
                                                                              onblur="if (this.placeholder == '') {this.placeholder = 'تکرار رمز';}">
                                 </li>
                                 <li class="psw two">
                                     <a href="#" class=" icon key"></a><input name="password" type="password"
                                                                              placeholder="رمز عبور"
-                                                                             onfocus="this.placeholder = '';"
+                                                                             onfocus="this.placeholder = '';" class="Per-Font-btn"
                                                                              onblur="if (this.placeholder == '') {this.placeholder = 'رمز عبور';}">
                                 </li>
                                 <div class="clear"></div>
                             </div>
 
-                            <div class="submit">
-                                <input type="submit" value="ایجاد حساب کاربری">
+                            <div class="submit Per-Font-btn">
+                                <input type="submit" value="ایجاد حساب کاربری" >
                                 <!--                                    <div class="strip">Or</div>-->
                             </div>
-                            <!---->
+
                             <!--                                <div class="dropbox"> <a class="drop" href="#">SIGN WITH DROPBOX</a></div>-->
                         </ul>
                         </form>

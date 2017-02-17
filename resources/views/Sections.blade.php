@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>--}}
 <html lang="en">
 <head>
     <title>Sections</title>
@@ -40,8 +40,11 @@ try {
     <link rel="stylesheet" href="css/bootstrap.css" >
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/touchTouch.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style_signup.css">
 
-	<script src="js/jquery.js"></script>
+
+    <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
     <script src="js/superfish.js"></script>
     <script src="js/jquery.mobilemenu.js"></script>
@@ -53,6 +56,7 @@ try {
     <script src="js/touchTouch.jquery.js"></script>
 
 <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+
 <script>
 
     $(window).load(function() {
@@ -154,6 +158,56 @@ try {
 
   </script>
 
+    <script >
+        /* window.onload() = function () {
+         document.getElementById("log").onclick =
+         function () {
+         show_log();
+         }
+         }*/
+
+        function show_log() {
+            setTimeout(function () {
+
+                if ($(login).hasClass('hide')) {
+                    /*if (!($(login).hasClass(fadeInLeft))){
+                     $(login).addClass(fadeInLeft);
+                     }*/
+                    $(login).removeClass("hide");
+                    $(login).addClass("animated");
+                }
+
+                if ($(login).hasClass('animated')) {
+                    if ($(login).hasClass('fadeOutLeft')) {
+                        $(login).removeClass('fadeOutLeft');
+                        $(login).addClass('fadeInLeft');
+                    }
+                    $(login).removeClass("animated");
+                    $(login).addClass("animated");
+                }
+            }, 1);
+        }
+
+
+        $('html').click(function () {
+//            debugger;
+            $(login).click(function (event) {
+                event.stopPropagation();
+            });
+
+            if ($(login).hasClass('animated')) {
+                console.log('test');
+                $(login).removeClass("animated");
+                if ($(login).hasClass('fadeInLeft')) {
+                    $(login).removeClass('fadeInLeft');
+                    $(login).addClass('fadeOutLeft');
+                }
+                $(login).addClass("animated");
+            }
+        })
+
+
+    </script>
 
 
     <!--[if lt IE 9]>
@@ -183,10 +237,39 @@ if(Session::get('token')){
 ?>
 
 <body>
+
+<div id="login" class="pro-info fadeInLeft hide" style="z-index: 1005; position: fixed; width: 24%">
+    <div class="login" style="margin: 10% 9px auto 9px;  width: auto;">
+        <form action="/loggingIn" method="post">
+            <ul>
+                <li>
+                    <a href="#" class=" icon user"></a><input name="username" type="text" class="text Per-Font-Parag"
+                                                              placeholder="نام کاربری" onfocus="this.placeholder = '';"
+                                                              onblur="if (this.placeholder == '') {this.placeholder = 'نام کاربری';}">
+                </li>
+
+                <li>
+                    <a href="#" class=" icon key"></a><input name="password" type="password" class="Per-Font-Parag"
+                                                             placeholder="رمز عبور" onfocus="this.placeholder = '';"
+                                                             onblur="if (this.placeholder == '') {this.placeholder = 'تکرار رمز';}">
+                </li>
+                <div class="clear"></div>
+
+                <div class="submit">
+                    <input type="submit" class="Per-Font-btn" value="ورود" >
+                    <!--                                    <div class="strip">Or</div>-->
+                </div>
+                <!---->
+                <!--                                <div class="dropbox"> <a class="drop" href="#">SIGN WITH DROPBOX</a></div>-->
+            </ul>
+        </form>
+
+    </div>
+</div>
 <!--==============================header=================================-->
 <header id="header">
       <div class="container">
-          <h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="index.php"><img alt="Grill point"
+          <h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="/"><img alt="Grill point"
                                                                                           src="img/Logo_Header.png"></a>
           </h1>
       </div>
@@ -221,19 +304,19 @@ if(Session::get('token')){
                     <!--<li><a href="index.php" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
                   <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
-                  <li><a href="Sections.php" class="Per-Font">تخفیف ها</a>
-                        <ul>
-                      <li><img src="img/arrowup.png" alt=""><a href="#">مرکزخرید</a></li>
-                      <li><a href="#">هتل</a></li>
-                      <li><a class="last" href="#">خدمات</a>
-                        <ul>
-                           <li><a href="#">ماساژ</a></li>
-                           <li><a class="last" href="#">آرایشگاه</a></li>
-                        </ul>
-                      </li>
-                    </ul>
+                  <li><a href="/Sections" class="Per-Font">تخفیف ها</a>
+                        {{--<ul>--}}
+                      {{--<li><img src="img/arrowup.png" alt=""><a href="#">مرکزخرید</a></li>--}}
+                      {{--<li><a href="#">هتل</a></li>--}}
+                      {{--<li><a class="last" href="#">خدمات</a>--}}
+                        {{--<ul>--}}
+                           {{--<li><a href="#">ماساژ</a></li>--}}
+                           {{--<li><a class="last" href="#">آرایشگاه</a></li>--}}
+                        {{--</ul>--}}
+                      {{--</li>--}}
+                    {{--</ul>--}}
                     </li>
-                    <li class="active"><a href="index.php" class="Per-Font">خانه</a></li>
+                    <li class="active"><a href="/" class="Per-Font">خانه</a></li>
                 </ul>
             </nav>
           </div>

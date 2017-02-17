@@ -37,22 +37,22 @@ try {
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Your name">
-    <link rel="stylesheet" href="../../public/css/bootstrap.css" >
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/touchTouch.css">
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/touchTouch.css">
 
-	<script src="../../public/js/jquery.js"></script>
-    <script src="../../public/js/jquery-migrate-1.2.1.js"></script>
-    <script src="../../public/js/superfish.js"></script>
-    <script src="../../public/js/jquery.mobilemenu.js"></script>
-    <script src="../../public/js/jquery.cookie.js"></script>
-    <script src="../../public/js/jquery.easing.1.3.js"></script>
-    <script src="../../public/js/jquery.ui.totop.js"></script>
-    <script src="../../public/js/jquery.touchSwipe.min.js"></script>
-    <script src="../../public/js/jquery.equalheights.js"></script>
-    <script src="../../public/js/touchTouch.jquery.js"></script>
+	<script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.mobilemenu.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/jquery.equalheights.js"></script>
+    <script src="js/touchTouch.jquery.js"></script>
 
-<script type="text/javascript" src="../../public/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script>
 
     $(window).load(function() {
@@ -156,6 +156,7 @@ try {
 
 
 
+
     <!--[if lt IE 9]>
     <div style='text-align:center'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div>
     <link rel="stylesheet" href="assets/tm/css/tm_docs.css" type="text/css" media="screen">
@@ -164,24 +165,66 @@ try {
   <![endif]-->
 </head>
 
+
+<?php
+//dd(Session::get('token'));
+if(Session::get('token')){
+//    dd($token);
+//      dd(Session::get('token'));
+    $token = Session::get('token');
+    if (!DB::table('Users')->where('remember_token', $token)->exists()){
+//        dd("not found");
+    }
+    else {
+        $user = DB::table('Users')->where('remember_token', $token)->first();
+
+        // dd($user->firstName);
+    }
+}
+?>
+
 <body>
 <!--==============================header=================================-->
 <header id="header">
       <div class="container">
-          <h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="../../public/index.php"><img alt="Grill point"
-                                                                                                       src="../../public/img/Logo_Header.png"></a>
+          <h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="index.php"><img alt="Grill point"
+                                                                                          src="img/Logo_Header.png"></a>
           </h1>
       </div>
-      <div class="menuheader">
-         <div class="container">
+    <div class="menuheader">
+        <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+                <ul class="nav sf-menu" style="right: 0px; position: absolute">
+                    <li><a href="About.php" class="Per-Font">
+                            <?php
+                            if (isset($user)){
+                                echo ($user->firstName);
+                            }
+                            else{
+                                echo ("ثبت نام");
+                            }
+                            ?>
+                        </a></li>
+                </ul>
+
+                <ul class="nav sf-menu" style="left: 0px; position: absolute ">
+                    <li><a id="log" href="javascript:void(0);" onclick="show_log();" class="Per-Font" style="<?php
+                        if (isset($user)){
+                            echo ("display : none");
+                        }?>">ورود</a></li>
+                    <li><a id="log" href="\loggingOut" class="Per-Font" style="<?php
+                        if (!isset($user)){
+                            echo ("display : none");
+                        }?>">خروج</a></li>
+                </ul>
+
                 <ul class="nav sf-menu">
                     <!--<li><a href="index.php" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
                   <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
                   <li><a href="Sections.php" class="Per-Font">تخفیف ها</a>
                         <ul>
-                      <li><img src="../../public/img/arrowup.png" alt=""><a href="#">مرکزخرید</a></li>
+                      <li><img src="img/arrowup.png" alt=""><a href="#">مرکزخرید</a></li>
                       <li><a href="#">هتل</a></li>
                       <li><a class="last" href="#">خدمات</a>
                         <ul>
@@ -191,7 +234,7 @@ try {
                       </li>
                     </ul>
                     </li>
-                    <li class="active"><a href="../../public/index.php" class="Per-Font">خانه</a></li>
+                    <li class="active"><a href="index.php" class="Per-Font">خانه</a></li>
                 </ul>
             </nav>
           </div>
@@ -219,38 +262,38 @@ try {
                   <div class="containerExtra">
                   <div id="container" class="clearfix Per-Div">
 
-                    <a href="../../public/Item_single.php" class="element transition هتل thumb" data-category="transition">
-                    	<figure class="img-polaroid"><img src="../../public/img/Catg_2.jpg" alt=""></figure><span class="description">هتل شماره 1</span>
+                    <a href="/Item/1" class="element transition هتل thumb" data-category="transition">
+                    	<figure class="img-polaroid"><img src="img/Catg_2.jpg" alt=""></figure><span class="description">هتل شماره 1</span>
                     </a>
                     <div class="element transition هتل" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Event_1%20-%20Copy.jpg" alt=""></figure></a><span class="description">هتل شماره 2</span>
+                    	<a href="/Item/2" class="thumb"><figure class="img-polaroid"><img src="img/Event_1 - Copy.jpg" alt=""></figure></a><span class="description">هتل شماره 2</span>
                     </div>
                     <div class="element transition رستوران" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Event_3%20-%20Copy.jpg" alt=""></figure></a><span class="description">رستوران شماره 1</span>
+                    	<a href="/Item/11" class="thumb"><figure class="img-polaroid"><img src="img/Event_3 - Copy.jpg" alt=""></figure></a><span class="description">رستوران شماره 1</span>
                     </div>
                     <div class="element transition آرایشگاه" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/page3_img9.jpg" alt=""></figure></a><span class="description">آرایشگاه شماره 1</span>
+                    	<a href="/Item/3" class="thumb"><figure class="img-polaroid"><img src="img/page3_img9.jpg" alt=""></figure></a><span class="description">آرایشگاه شماره 1</span>
                     </div>
                     <div class="element transition تفریحی" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Entertainment_1.jpg" alt=""></figure></a><span class="description">تفریحی شماره 1</span>
+                    	<a href="/Item/4" class="thumb"><figure class="img-polaroid"><img src="img/Entertainment_1.jpg" alt=""></figure></a><span class="description">تفریحی شماره 1</span>
                     </div>
                     <div class="element transition تفریحی" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Event_2%20-%20Copy.jpg" alt=""></figure></a><span class="description">تفریحی شماره 2</span>
+                    	<a href="/Item/5" class="thumb"><figure class="img-polaroid"><img src="img/Event_2 - Copy.jpg" alt=""></figure></a><span class="description">تفریحی شماره 2</span>
                     </div>
                     <div class="element transition رستوران" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Catg_1.jpg" alt=""></figure></a><span class="description">رستوران شماره 2</span>
+                    	<a href="/Item/6" class="thumb"><figure class="img-polaroid"><img src="img/Catg_1.jpg" alt=""></figure></a><span class="description">رستوران شماره 2</span>
                     </div>
                     <div class="element transition رستوران" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Resturant_1%20-%20Copy.jpg" alt=""></figure></a><span class="description">رستوران شماره 3</span>
+                    	<a href="/Item/7" class="thumb"><figure class="img-polaroid"><img src="img/Resturant_1 - Copy.jpg" alt=""></figure></a><span class="description">رستوران شماره 3</span>
                     </div>
                     <div class="element transition رستوران" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Resturant_2%20-%20Copy.jpg" alt=""></figure></a><span class="description">رستوران شماره 4</span>
+                    	<a href="/Item/8" class="thumb"><figure class="img-polaroid"><img src="img/Resturant_2 - Copy.jpg" alt=""></figure></a><span class="description">رستوران شماره 4</span>
                     </div>
                     <div class="element transition مرکزخرید" data-category="transition">
-                    	<a href="../../public/Item_single.php" class="thumb"><figure class="img-polaroid"><img src="../../public/img/Event_4.jpg" alt=""></figure></a><span class="description">مرکز خرید شماره 1</span>
+                    	<a href="/Item/9" class="thumb"><figure class="img-polaroid"><img src="img/Event_4.jpg" alt=""></figure></a><span class="description">مرکز خرید شماره 1</span>
                     </div>
                     <div class="element transition ماساژ" >
-                    	<a href="../../public/Item_single.php" class="thumb"><figure ><img src="../../public/img/Catg_3%20-%20Copy.jpg" alt=""></figure></a><span class="description">ماساژ شماره 1</span>
+                    	<a href="/Item/10" class="thumb"><figure ><img src="img/Catg_3 - Copy.jpg" alt=""></figure></a><span class="description">ماساژ شماره 1</span>
                     </div>
 		       </div>
                </div>
@@ -280,6 +323,6 @@ try {
         </div>
     </div>
 </footer>
-<script src="../../public/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body><!-- Google Tag Manager --><!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->-->
 </html>

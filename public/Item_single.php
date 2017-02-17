@@ -7,6 +7,15 @@
 <!DOCTYPE html>
 <html lang="zxx"> 
 <!-- Head -->
+
+<?php
+//echo(\Session::get(item_id));
+//echo(session('item_id'));
+/*if (session('al')){
+	dd('1');
+}*/
+?>
+
 <head> 
 <title>Groovy Apparel a E-Commerce & Fashion Category Bootstrap Responsive Website Template | Men's Single :: W3layouts</title>
 
@@ -57,6 +66,7 @@
 
 </head>
 <!-- //Head -->
+
 
 
 
@@ -360,7 +370,6 @@
 <!---->
 <!--	</div>-->
 	<!-- //Header -->
-
 
 
 	<!-- Single-Product-View -->

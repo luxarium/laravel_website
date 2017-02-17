@@ -8,7 +8,7 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
 	position: relative;
 }
 
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
 p {
@@ -125,7 +125,7 @@ a:focus, a:hover {
 	}
 
 	ul.multi-column-dropdown li.heading {
-		font-family: 'Montserrat', sans-serif;
+		/*font-family: 'Montserrat', sans-serif;*/
 		color: #c41228;
 	}
 
@@ -162,7 +162,7 @@ a:focus, a:hover {
 
 	a.dropdown-toggle.hyper, .navbar-default .navbar-nav > li > a {
 		padding: 10px 20px;
-		font-family: 'Montserrat', sans-serif;
+		/*font-family: 'Montserrat', sans-serif;*/
 		line-height: 0;
 		margin: 13px 5px 20px;
 	}
@@ -185,7 +185,7 @@ a:focus, a:hover {
 
 	.dropdown-menu p {
 		margin-bottom: 30px;
-		font-family: 'Montserrat', sans-serif;
+		/*font-family: 'Montserrat', sans-serif;*/
 		color: #c41228;
 	}
 
@@ -590,7 +590,7 @@ a:focus, a:hover {
 			padding: 15px;
 			width: 100%;
 			border: none;
-			font-family: 'Montserrat', sans-serif;
+			/*font-family: 'Montserrat', sans-serif;*/
 			font-size: 11px;
 			color: #FFF;
 			outline: none;
@@ -663,7 +663,7 @@ a:focus, a:hover {
 		input[type="submit"] {
 			padding: 10px 0;
 			width: 100%;
-			font-family: 'Montserrat', sans-serif;
+			/*font-family: 'Montserrat', sans-serif;*/
 			font-size: 14px;
 			border: none;
 			outline: none;
@@ -800,7 +800,7 @@ div#my-cart-modal .btn-danger:hover {
 }
 
 div#my-cart-modal strong {
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	color: #000;
 	font-size: 15px;
 }
@@ -812,7 +812,7 @@ div#my-cart-modal .modal-footer {
 div#my-cart-modal button.btn.btn-default, div#my-cart-modal button.btn.btn-primary {
 	padding: 8px 0;
 	width: 15%;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	font-size: 14px;
 	border: none;
 	border-radius: 0;
@@ -837,7 +837,7 @@ div#my-cart-modal .alert-danger {
 	color: #FFF;
 	text-align: center;
 	background-color: #c41228;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	font-size: 15px;
 	margin: 20px;
 	border: none;
@@ -911,13 +911,13 @@ div#my-cart-modal .close:hover, .close:focus {
 }
 
 .wthreehome-latest-grid h5 {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
 	font-weight: 400;
 	margin: 10px 0;
 }
 
 .wthreehome-latest-grid h6 a {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
 	font-size: 14px;
 	font-weight: 400;
 	text-decoration: underline;
@@ -1037,7 +1037,7 @@ figure.effect-apollo:hover figcaption::before {
 	padding: 10px 50px;
 	border: 2px solid #FFF;
 	color: #FFF;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	display: inline-block;
 }
 
@@ -1241,7 +1241,7 @@ figure.effect-apollo:hover figcaption::before {
 	line-height: 30px;
 	font-size: 12px;
 	letter-spacing: 1px;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	color: #000;
 }
 
@@ -1273,7 +1273,7 @@ figure.effect-apollo:hover figcaption::before {
 }
 
 .w3lscopyrightaitsgrid1 p a {
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	color: #000;
 }
 
@@ -1434,7 +1434,7 @@ p.w3teaseraits {
 	padding: 8px 60px;
 	background-color: #333;
 	color: #FFF;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	display: inline-block;
 }
 
@@ -1479,7 +1479,7 @@ div#small-dialog4 {
 }
 
 .w3laccessoriesaits-grid h6 a {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
 	font-size: 14px;
 	padding: 8px 50px;
 	font-weight: 400;
@@ -1553,7 +1553,7 @@ div#small-dialog4 {
 }
 
 .timer {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
 	font-size: 100px;
 	font-weight: 100;
 	display: inline-block;
@@ -1564,7 +1564,7 @@ div#small-dialog4 {
 
 .text {
 	font-size: 18px;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
 .clock .column {
@@ -1579,7 +1579,7 @@ div#small-dialog4 {
 .w3lsnewsletter {
 	padding: 50px 0;
 	background-color: #202020;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
  .w3lsnewsletter-grid-1 p, .w3lsnewsletter-grid-1 h2 {
@@ -1819,7 +1819,7 @@ h1.w3wthreeheadingaits {
 
 .no-touch .cbp-pgoptions li {
 	color: #c41228;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
 .cbp-pgoptions li:before, .cbp-pgoptions li > span {
@@ -1974,7 +1974,7 @@ h1.w3wthreeheadingaits {
 
 .cbp-pginfo span {
 	width: 20%;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 	font-weight: 700;
 	letter-spacing: 1px;
 	text-align: right;
@@ -2203,7 +2203,7 @@ button.btn.btn-danger.my-cart-btn {
     text-transform: uppercase;
     font-weight: 300;
     letter-spacing: 4px;
-    font-family: 'Yantramanav', sans-serif;
+    /*font-family: 'Yantramanav', sans-serif;*/
 }
 .back p {
     margin: 0.8em 0;
@@ -2214,7 +2214,7 @@ button.btn.btn-danger.my-cart-btn {
 .back h6 {
     font-size: 3em;
     color: #fff;
-    font-family: 'Yantramanav', sans-serif;
+    /*font-family: 'Yantramanav', sans-serif;*/
 }
 .back h6 sup {
     font-size: .5em;
@@ -2871,7 +2871,7 @@ p.w3-agile {
 }
 
 .wthreeaddressaits-grid1 {
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
 .wthreeaddressaits-grid1 h4 {
@@ -2903,7 +2903,7 @@ address {
 .wthreeaddressaits-grid2 input.text, .wthreeaddressaits-grid2 textarea.text {
 	margin-bottom: 10px;
 	padding: 12px;
-	font-family: inherit;
+	/*font-family: inherit;*/
 	font-size: 13px;
 }
 
@@ -2995,7 +2995,7 @@ textarea.text {
 
 .single-price ul li:nth-child(1) {
 	font-size: 50px;
-	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
 }
 
 .single-price ul li:nth-child(1) small {
@@ -3210,21 +3210,21 @@ p.single-price-text {
 
 /*-- Placeholder-Color --*/
 
-	::-webkit-input-placeholder {
-		color: #FFF;
-	}
+	/*::-webkit-input-placeholder {*/
+		/*color: #FFF;*/
+	/*}*/
 
-	::-moz-placeholder {
-		color: #FFF;
-	}
+	/*::-moz-placeholder {*/
+		/*color: #FFF;*/
+	/*}*/
 
-	::-moz-placeholder {
-		color: #FFF;
-	}
+	/*::-moz-placeholder {*/
+		/*color: #FFF;*/
+	/*}*/
 
-	::-ms-input-placeholder {
-		color: #FFF;
-	}
+	/*::-ms-input-placeholder {*/
+		/*color: #FFF;*/
+	/*}*/
 
 /*-- //Placeholder-Color --*/
 

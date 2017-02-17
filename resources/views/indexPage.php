@@ -177,8 +177,19 @@
 </head>
 
 <?php
-    if(isset($token)){
+//dd(Session::get('token'));
+    if(Session::get('token')){
+//    dd($token);
+//      dd(Session::get('token'));
+        $token = Session::get('token');
+    if (!DB::table('Users')->where('remember_token', $token)->exists()){
+//        dd("not found");
+    }
+    else {
+        $user = DB::table('Users')->where('remember_token', $token)->first();
 
+       // dd($user->firstName);
+    }
     }
 ?>
 
@@ -186,7 +197,7 @@
 
 <div id="login" class="pro-info fadeInLeft hide" style="z-index: 1005; position: fixed; width: 24%">
     <div class="login" style="margin: 10% 9px auto 9px;  width: auto;">
-        <form action="/loggignIn" method="post">
+        <form action="/loggingIn" method="post">
             <ul>
                 <li>
                     <a href="#" class=" icon user"></a><input name="username" type="text" class="text Per-Font-Parag"
@@ -223,7 +234,16 @@
         <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
                 <ul class="nav sf-menu" style="right: 0px; position: absolute">
-                    <li><a href="About.php" class="Per-Font">ثبت نام</a></li>
+                    <li><a href="About.php" class="Per-Font">
+                            <?php
+                                if (isset($user)){
+                                echo ($user->firstName);
+                                }
+                                else{
+                                    echo ("ثبت نام");
+                                }
+                            ?>
+                        </a></li>
                 </ul>
 <!--                <div class="total-cart">-->
 <!--                    <ul>-->
@@ -269,26 +289,34 @@
 <!--                        </li>-->
 <!--                    </ul>-->
 <!--                </div>-->
-                <ul class="nav sf-menu" style="left: 0px; position: absolute">
-                    <li><a id="log" href="javascript:void(0);" onclick="show_log();" class="Per-Font">ورود</a></li>
+                <ul class="nav sf-menu" style="left: 0px; position: absolute ">
+                    <li><a id="log" href="javascript:void(0);" onclick="show_log();" class="Per-Font" style="<?php
+                        if (isset($user)){
+                            echo ("display : none");
+                        }?>">ورود</a></li>
+                    <li><a id="log" href="\loggingOut" class="Per-Font" style="<?php
+                        if (!isset($user)){
+                            echo ("display : none");
+                        }?>">خروج</a></li>
                 </ul>
+
                 <ul class="nav sf-menu">
                     <!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
                     <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
-                    <li><a href="Sections.php" class="Per-Font">تخفیف ها</a>
-                        <ul>
-                            <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>
-                            <li><a href="#">هتل</a></li>
-                            <li><a class="last" href="#">خدمات</a>
-                                <ul>
-                                    <li><a href="#">ماساژ</a></li>
-                                    <li><a class="last" href="#">آرایشگاه</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li><a href="/Sections" class="Per-Font">تخفیف ها</a>
+<!--                        <ul>-->
+<!--                            <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>-->
+<!--                            <li><a href="#">هتل</a></li>-->
+<!--                            <li><a class="last" href="#">خدمات</a>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="#">ماساژ</a></li>-->
+<!--                                    <li><a class="last" href="#">آرایشگاه</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                        </ul>-->
                     </li>
-                    <li class="active"><a href="index.php" class="Per-Font">خانه</a></li>
+                    <li class="active"><a href="/" class="Per-Font">خانه</a></li>
                 </ul>
             </nav>
         </div>
@@ -388,38 +416,38 @@
         </div>
     </div>
     <!--==============================row4=================================-->
-    <div class="row_4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 chef row4_col">
-                    <h2 class="Per-Header2">درباره لوکساریوم</h2>
-                    <figure><img src="img/page1_img8.jpg" alt=""></figure>
-                    <p class="title3 Per-Font-Parag">معرفی شرکت</p>
-                    <p class="Per-Font-Parag">متن معرفی و اینها! </p>
-                    <!--<p class="m_bot1 ">Nasgaesaert asetyertya asetrde maeciegast nieriti vrtye remiades.Molirnatur aut oditaut.</p>-->
-                    <a href="#" class="btn-link btn-link2 Per-Font-btn">بیشتر<span></span></a>
-                </div>
-                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 row4_col">
-                    <h2 class="Per-Header2">دسته ها</h2>
-                    <ul class="list2">
-                        <li ><a href="#">هتل</a></li>
-                        <li ><a href="#">رستوران </a></li>
-                        <li ><a href="#">باشگاه</a></li>
-                        <li ><a href="#">ماساژ</a></li>
-                        <li ><a href="#">تور های تفریحی</a></li>
-                        <li ><a href="#">خدمات لوکس</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 locations row4_col">
-                    <h2 class="Per-Header2">مکان</h2>
-                    <figure><img src="img/Logo_Footer.png" alt=""></figure>
-                    <!--<p class="title4">تهران - خیابان ستارخان<br>ایران</p>-->
-                    <hr class="line1">
-                    <a href="#" class="btn-link btn-link3"><span>info@luxarium.ir</span><!--<span class="__cf_email__" data-cfemail="a8c1c6cec7e8cccdc5c7c4c1c6c386c7dacf">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>--></a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="row_4">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-4 col-md-4 col-sm-4 chef row4_col">-->
+<!--                    <h2 class="Per-Header2">درباره لوکساریوم</h2>-->
+<!--<!--                    <figure><img src="img/page1_img8.jpg" alt=""></figure>-->
+<!--                    <p class="title3 Per-Font-Parag">معرفی شرکت</p>-->
+<!--                    <p class="Per-Font-Parag">متن معرفی و اینها! </p>-->
+<!--                    <!--<p class="m_bot1 ">Nasgaesaert asetyertya asetrde maeciegast nieriti vrtye remiades.Molirnatur aut oditaut.</p>-->
+<!--                    <a href="#" class="btn-link btn-link2 Per-Font-btn">بیشتر<span></span></a>-->
+<!--                </div>-->
+<!--                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 row4_col">-->
+<!--                    <h2 class="Per-Header2">دسته ها</h2>-->
+<!--                    <ul class="list2">-->
+<!--                        <li ><a href="#">هتل</a></li>-->
+<!--                        <li ><a href="#">رستوران </a></li>-->
+<!--                        <li ><a href="#">باشگاه</a></li>-->
+<!--                        <li ><a href="#">ماساژ</a></li>-->
+<!--                        <li ><a href="#">تور های تفریحی</a></li>-->
+<!--                        <li ><a href="#">خدمات لوکس</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 locations row4_col">-->
+<!--                    <h2 class="Per-Header2">مکان</h2>-->
+<!--                    <figure><img src="img/Logo_Footer.png" alt=""></figure>-->
+<!--                    <!--<p class="title4">تهران - خیابان ستارخان<br>ایران</p>-->
+<!--                    <hr class="line1">-->
+<!--                    <a href="#" class="btn-link btn-link3"><span>info@luxarium.ir</span><!--<span class="__cf_email__" data-cfemail="a8c1c6cec7e8cccdc5c7c4c1c6c386c7dacf">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>--></a>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <!--==============================footer=================================-->
 <footer>
@@ -434,7 +462,7 @@
                 </ul>-->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>
+                <a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>

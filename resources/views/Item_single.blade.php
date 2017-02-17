@@ -1,19 +1,13 @@
-9-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->  
-<!DOCTYPE html>
+
+{{--<!DOCTYPE html>--}}
 <html lang="zxx"> 
 <!-- Head -->
 
 <?php
-//echo(\Session::get(item_id));
-echo(session('item_id'));
-/*if (session('al')){
-	dd('1');
-}*/
+		$token = session('token');
+		$item_id = session('item_id');
+//		echo ($token);
+//		echo ($item_id);
 ?>
 
 <head> 
@@ -27,70 +21,193 @@ echo(session('item_id'));
 <!-- //Meta-Tags -->
 
 <!-- Custom-Stylesheet-Links -->
-	<link rel="stylesheet" href="css/tm_docs.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="{{asset('css/tm_docs.css')}}" type="text/css" media="screen">
 
-	<!-- Bootstrap-CSS -->	<link rel="stylesheet" href="../../resources/views/css/bootstrap.css"	 type="text/css" media="all">
-<!-- Index-Page-CSS -->	<link rel="stylesheet" href="../../resources/views/css/style_2.css"		 type="text/css" media="all">
-<!-- FlexSlider-CSS -->	<link rel="stylesheet" href="../../resources/views/css/flexslider.css" type="text/css" media="all">
+
+<!-- Bootstrap-CSS -->	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}"	 type="text/css" media="all">
+<!-- Index-Page-CSS -->	<link rel="stylesheet" href="{{asset('css/style_2.css')}}" 	 type="text/css" media="all">
+<!-- FlexSlider-CSS -->	<link rel="stylesheet" href="{{asset('css/flexslider.css')}}" type="text/css" media="all">
 <!-- //Custom-Stylesheet-Links -->
 
-	<link rel="stylesheet" href="../views/css/bootstrap.css" >
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/style_signup.css">
-	<link rel="stylesheet" href="css/touchTouch.css">
+	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" >
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style_signup.css')}}">
+	<link rel="stylesheet" href="{{asset('css/touchTouch.css')}}">
+	<link rel="stylesheet" href="{{asset('css/animate.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style_signup.css')}}">
 
-	HTML::style('css/bootstrap.css');
 
 
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery-migrate-1.2.1.js"></script>
-	<script src="js/superfish.js"></script>
-	<script src="js/jquery.mobilemenu.js"></script>
-	<script src="js/jquery.cookie.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.ui.totop.js"></script>
-	<script src="js/jquery.touchSwipe.min.js"></script>
-	<script src="js/jquery.equalheights.js"></script>
 
-<!-- Fonts -->
-<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700"	   type="text/css" media="all">-->
-<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"	   type="text/css" media="all">-->
-<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500" type="text/css" media="all">-->
-<!-- //Fonts -->
+
+	{{--{{HTML::style('css/bootstrap.css')}}--}}
+
+
+	<script src="{{asset('js/jquery.js')}}"></script>
+	<script src="{{asset('js/jquery-migrate-1.2.1.js')}}"></script>
+	<script src="{{asset('js/superfish.js')}}"></script>
+	<script src="{{asset('js/jquery.mobilemenu.js')}}"></script>
+	<script src="{{asset('js/jquery.cookie.js')}}"></script>
+	<script src="{{asset('js/jquery.easing.js')}}"></script>
+	<script src="{{asset('js/jquery.ui.totop.js')}}"></script>
+	<script src="{{asset('js/jquery.touchSwipe.min.js')}}"></script>
+	<script src="{{asset('js/jquery.equalheights.js')}}"></script>
+
+
+
 
 <!-- Font-Awesome-File-Links -->
-<!-- CSS --> <link rel="stylesheet" href="css/font-awesome.css" 		 type="text/css" media="all">
-<!-- TTF --> <link rel="stylesheet" href="fonts/fontawesome-webfont.ttf" type="text/css" media="all">
+<!-- CSS --> <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}" 		 type="text/css" media="all">
+<!-- TTF --> <link rel="stylesheet" href="{{asset('fonts/fontawesome-webfont.ttf')}}" type="text/css" media="all">
 <!-- //Font-Awesome-File-Links -->
 
 <!-- Default-JavaScript -->
 	<!--<script src="js/jquery-2.2.3.js"></script>-->
 
+	<script type="text/javascript">
+		/* window.onload() = function () {
+		 document.getElementById("log").onclick =
+		 function () {
+		 show_log();
+		 }
+		 }*/
+
+		function show_log() {
+			setTimeout(function () {
+
+				if ($(login).hasClass('hide')) {
+					/*if (!($(login).hasClass(fadeInLeft))){
+					 $(login).addClass(fadeInLeft);
+					 }*/
+					$(login).removeClass("hide");
+					$(login).addClass("animated");
+				}
+
+				if ($(login).hasClass('animated')) {
+					if ($(login).hasClass('fadeOutLeft')) {
+						$(login).removeClass('fadeOutLeft');
+						$(login).addClass('fadeInLeft');
+					}
+					$(login).removeClass("animated");
+					$(login).addClass("animated");
+				}
+			}, 1);
+		}
+
+
+		$('html').click(function () {
+			$(login).click(function (event) {
+				event.stopPropagation();
+			});
+
+			if ($(login).hasClass('animated')) {
+				console.log('test');
+				$(login).removeClass("animated");
+				if ($(login).hasClass('fadeInLeft')) {
+					$(login).removeClass('fadeInLeft');
+					$(login).addClass('fadeOutLeft');
+				}
+				$(login).addClass("animated");
+//				$(login).addClass("hide");
+
+			}
+		})
+
+
+	</script>
+
 </head>
 <!-- //Head -->
 
+<?php
+//dd(Session::get('token'));
+if(Session::get('token')){
+//    dd($token);
+//      dd(Session::get('token'));
+	$token = Session::get('token');
+	if (!DB::table('Users')->where('remember_token', $token)->exists()){
+//        dd("not found");
+	}
+	else {
+		$user = DB::table('Users')->where('remember_token', $token)->first();
 
+		// dd($user->firstName);
+	}
+}
+?>
 
 
 <!-- Body -->
 <body>
+<div id="login" class="pro-info fadeInLeft hide" style="z-index: 1005; position: fixed; width: 24%">
+	<div class="login" style="margin: 10% 9px auto 9px;  width: auto;">
+		<form action="/loggingIn" method="post">
+			<ul>
+				<li>
+					<a href="#" class=" icon user"></a><input name="username" type="text" class="text Per-Font-Parag"
+															  placeholder="نام کاربری" onfocus="this.placeholder = '';"
+															  onblur="if (this.placeholder == '') {this.placeholder = 'نام کاربری';}">
+				</li>
+
+				<li>
+					<a href="#" class=" icon key"></a><input name="password" type="password" class="Per-Font-Parag"
+															 placeholder="رمز عبور" onfocus="this.placeholder = '';"
+															 onblur="if (this.placeholder == '') {this.placeholder = 'تکرار رمز';}">
+				</li>
+				<div class="clear"></div>
+
+				<div class="submit">
+					<input type="submit" class="Per-Font-btn" value="ورود" >
+					<!--                                    <div class="strip">Or</div>-->
+				</div>
+				<!---->
+				<!--                                <div class="dropbox"> <a class="drop" href="#">SIGN WITH DROPBOX</a></div>-->
+			</ul>
+		</form>
+
+	</div>
+</div>
 
 <header id="header">
 	<div class="container">
-		<h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="index.php"><img alt="Grill point"
-																						src="img/Logo_Header.png"></a>
+		<h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="{{url('')}}"><img alt="Grill point"
+																						src="{{asset('img/Logo_Header.png')}}"></a>
 		</h1>
 	</div>
 	<div class="menuheader">
 		<div class="container">
 			<nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+				<ul class="nav sf-menu" style="right: 0px; position: absolute">
+					<li><a href="About.php" class="Per-Font">
+							<?php
+							if (isset($user)){
+								echo ($user->firstName);
+							}
+							else{
+								echo ("ثبت نام");
+							}
+							?>
+						</a></li>
+				</ul>
+
+				<ul class="nav sf-menu" style="left: 0px; position: absolute ">
+					<li><a id="log" href="javascript:void(0);" onclick="show_log();" class="Per-Font" style="<?php
+						if (isset($user)){
+							echo ("display : none");
+						}?>">ورود</a></li>
+					<li><a id="log" href="\loggingOut" class="Per-Font" style="<?php
+						if (!isset($user)){
+							echo ("display : none");
+						}?>">خروج</a></li>
+				</ul>
+
 				<ul class="nav sf-menu">
 					<!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
-					<li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
-					<li><a href="Sections.php" class="Per-Font">تخفیف ها</a>
+					<li><a href="{{url('index-2.html')}}index-2.html" class="Per-Font">شهر ها</a></li>
+					<li><a href="/Sections" class="Per-Font">تخفیف ها</a>
 						<ul>
-							<li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>
+							<li><img src="{{asset('img/arrowup.png')}}" alt=""><a href="#">رستوران</a></li>
 							<li><a href="#">هتل</a></li>
 							<li><a class="last" href="#">خدمات</a>
 								<ul>
@@ -100,7 +217,7 @@ echo(session('item_id'));
 							</li>
 						</ul>
 					</li>
-					<li class="active"><a href="index.php" class="Per-Font">خانه</a></li>
+					<li class="active"><a href="{{url('')}}" class="Per-Font">خانه</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -384,14 +501,14 @@ echo(session('item_id'));
 					<div class="col-md-6 single-top-left">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="img/Event_1.jpg">
-									<div class="thumb-image detail_images"> <img src="img/Event_1.jpg" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
+								<li data-thumb="{{asset('img/Event_1.jpg')}}">
+									<div class="thumb-image detail_images"> <img src="{{asset('img/Event_1.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
 								</li>
-								<li data-thumb="img/Event_2.jpg">
-									 <div class="thumb-image"> <img src="img/Event_2.jpg" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
+								<li data-thumb="{{asset('img/Event_2.jpg')}}">
+									 <div class="thumb-image"> <img src="{{asset('img/Event_2.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
 								</li>
-								<li data-thumb="img/Event_3.jpg">
-									<div class="thumb-image"> <img src="img/Event_3.jpg" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
+								<li data-thumb="{{asset('img/Event_3.jpg')}}">
+									<div class="thumb-image"> <img src="{{asset('img/Event_3.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
 								</li> 
 							</ul>
 						</div>
@@ -423,7 +540,13 @@ echo(session('item_id'));
 						</div>
 						<p class="single-price-text Per-Font2">سفر لوکس به یادماندی را با قیمت باورنکردنی تجربه کنید</p>
 						<div class="cbp-pgcontent aitssinglew3" id="mens_single">
-							<button class="btn btn-danger agileits my-cart-btn Per-Font-btn" data-id="mens_single" data-name="Black Leather Jacket" data-summary="Black Leather Jacket" data-price="67.5" data-quantity="1" data-image="images/s1.jpg"><i class="fa fa-cart-plus" aria-hidden="true"></i>خرید</button>
+							{{--<button class="btn btn-danger agileits my-cart-btn Per-Font-btn" data-id="mens_single" data-name="Black Leather Jacket" data-summary="Black Leather Jacket" data-price="67.5" data-quantity="1" data-image="images/s1.jpg"><i class="fa fa-cart-plus" aria-hidden="true"></i>خرید</button>--}}
+							<form action="/purchases" method="post">
+								<input type='hidden' name="token" value={{$token}} />
+								<input type='hidden' name="offer_id" value={{$item_id}} />
+								<input type='hidden' name="count" value=1 />
+								<input class="btn btn-danger agileits my-cart-btn Per-Font-btn" type="submit" value="خرید">
+							</form>
 							<div class="clearfix"></div>
 						</div>
 
@@ -646,12 +769,12 @@ echo(session('item_id'));
 
 	<!-- Custom-JavaScript-File-Links -->
 
-<!-- Default-JavaScript --><script src="js/jquery-2.2.3.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- Default-JavaScript --><script src="{{asset('js/jquery-2.2.3.js')}}"></script>
+<script src="{{asset('js/modernizr.custom.js')}}"></script>
 	<!-- Custom-JavaScript-File-Links -->
 
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="{{asset('js/minicart.js')}}"></script>
 	<script>
         w3l.render();
 
@@ -687,7 +810,7 @@ echo(session('item_id'));
 		<!-- //Dropdown-Menu-JavaScript -->
 
 		<!-- Popup-Box-JavaScript -->
-			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<script src="{{asset('js/jquery.magnific-popup.js')}}" type="text/javascript"></script>
 			<script>
 				$(document).ready(function() {
 					$('.popup-with-zoom-anim').magnificPopup({
@@ -706,7 +829,7 @@ echo(session('item_id'));
 		<!-- //Popup-Box-JavaScript -->
 
 		<!-- FlexSlider-JavaScript -->
-			<script defer src="js/jquery.flexslider.js"></script>
+			<script defer src="{{asset('js/jquery.flexslider.js')}}"></script>
 			<script>
 				$(window).load(function() {
 					$('.flexslider').flexslider({
@@ -721,7 +844,7 @@ echo(session('item_id'));
 
 	<!-- //Custom-JavaScript-File-Links -->
 
-		<!-- Bootstrap-JavaScript --> <script src="js/bootstrap.js"></script>
+		<!-- Bootstrap-JavaScript --> <script src="{{asset('js/bootstrap.js')}}"></script>
 
 </body>
 <!-- //Body -->
