@@ -125,11 +125,11 @@ if(Session::get('token')){
 //    dd($token);
 //      dd(Session::get('token'));
 	$token = Session::get('token');
-	if (!DB::table('Users')->where('remember_token', $token)->exists()){
+	if (!DB::table('users')->where('remember_token', $token)->exists()){
 //        dd("not found");
 	}
 	else {
-		$user = DB::table('Users')->where('remember_token', $token)->first();
+		$user = DB::table('users')->where('remember_token', $token)->first();
 
 		// dd($user->firstName);
 	}

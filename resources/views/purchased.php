@@ -191,6 +191,8 @@
        // dd($user->firstName);
     }
     }
+
+    $p_token = session('p_token');
 ?>
 
 <body ng-app="luxarium" ng-controller="mainCtrl">
@@ -327,94 +329,17 @@
 
 
     <!--==============================slider=================================-->
-    <div class="slider " style="position : relative; direction : ltr">
 
-
-        <div class="camera_wrap animate-box" data-animate-effect='fadeIn'>
-            <div data-src="img/Resturant_1.jpg">
-                <div class="pro-info fadeInLeft animated">
-                <span>
-                    <p> رستوران 1</p>
-                </span>
-                </div>
-            </div>
-            <div data-src="img/Resturant_2.jpg">
-                <div class="pro-info fadeInLeft animated">
-                    <span>
-                        <p>رستوران 2</p>
-                    </span>
-                </div>
-            </div>
-            <div data-src="img/Hotel_Room_1.jpg">
-                <div class="pro-info fadeInLeft animated ">
-                    <span>
-                        <p> هتل 1</p>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
     <!--==============================row1=================================-->
     <div class="row_1">
         <div class="container ">
-            <p class="title1 Per-Header">لوکساریوم</p>
-            <p class="title2 Per-Font">تخفیف های بی نظیر لوکس، با بهترین کیفیت را با ضمانت ما تجربه کنید.</p>
-            <a href="#" class="btn btn-default btn-lg btn1 Per-Font-btn">بیشتر</a>
+            <p class="title1 Per-Header">مشتری گرامی، <?php echo( $user -> firstName )?></p>
+            <p class="title2 Per-Font">با تشکر از خرید شما، این خرید با کد <?php echo $p_token?> ثبت شده و قابل پیگیری یا استفاده است. </p>
+            <a href="/" class="btn btn-default btn-lg btn1 Per-Font-btn">خانه</a>
         </div>
     </div>
     <!--==============================row2=================================-->
-    <div class="row_2 " >
-        <div class="container">
-            <div class="row " >
-                <ul id="test" class="list1" >
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox1">
-                        <div class="box1 animate-box">
-                            <a href="/Item/1">
-                                <figure><img src="img/Catg_1.jpg" alt=""></figure>
-                                <p class="Per-Font2">رستوران ها</p>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox2">
-                        <div class="box2 animate-box">
-                            <a href="/Item/1">
-                                <p class="Per-Font2">هتل ها</p>
-                                <figure><img src="img/Catg_2.jpg" alt=""></figure>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox3">
-                        <div class="box3 animate-box">
-                            <a href="/Item/1 ">
-                                <figure><img src="img/Catg_3.jpg" alt=""></figure>
-                                <p class="Per-Font2">خدمات</p>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--==============================row3=================================-->
-    <div class="row_3">
-        <div class="container">
-            <div class="row">
-                <ul class="list3" >
-                    <li class="col-lg-6 col-md-6 col-sm-6" ng-repeat="item in items">
-                        <div class="box4 animate-box" data-animate-effect='fadeIn'>
-                            <figure><img ng-src="{{item.imagePath}}" /></figure>
-                            <div class="info1 maxheight">
-                                <p class="list3title1">{{item.title}}</p>
-                                <p class="list3title2">{{item.subTitle}}</p>
-                                <p class="list3title3">{{description}}</p>
-                                <a href="/Item/1" class="btn-link btn-link1 Per-Font-btn">اطلاعات بیشتر<span></span></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
     <!--==============================row4=================================-->
 <!--    <div class="row_4">-->
 <!--        <div class="container">-->
@@ -450,26 +375,26 @@
 <!--    </div>-->
 </div>
 <!--==============================footer=================================-->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <!--<ul class="social_icons clearfix">
-                     <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>
-                     <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>
-                     <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
-                     <li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>
-                </ul>-->
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>
-            </div>
-        </div>
-    </div>
-</footer>
+<!--<footer>-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4 col-md-4 col-sm-4 footercol">-->
+<!--                <!--<ul class="social_icons clearfix">-->
+<!--                     <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>-->
+<!--                     <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>-->
+<!--                     <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>-->
+<!--                     <li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>-->
+<!--                </ul>-->-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">-->
+<!--                <a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>-->
+<!--            </div>-->
+<!--            <div class="col-lg-4 col-md-4 col-sm-4 footercol">-->
+<!--                <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
 <script src="js/bootstrap.min.js"></script>
 <!--<script type="text/javascript">
 
