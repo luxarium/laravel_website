@@ -58,8 +58,13 @@ Route::post('/loggingIn', function (Request $request) {
 
     Session::forget('token');
 
+    $offer_id = Session::get('offer_id');
+
+
     if (!(Users::where('user_id', '=', $username)->exists())) {
         //dd("Not Found");
+        if (isset($offer_id))
+            return redirect()->route('item',['id' => $offer_id]);
         return redirect()->back();
     } else {
         $user = Users::where('user_id', '=', $username)->firstOrFail();
@@ -75,15 +80,22 @@ Route::post('/loggingIn', function (Request $request) {
                     ->update(array('remember_token' => $token_key));
                 //Sessions::put('hdfh',$token_key);
 
-                //dd("OK");
+//                dd("OK");
 
 
             Session::put('token', $token_key);
+
+            if (isset($offer_id))
+            return redirect()->route('item',['id' => $offer_id]);
+
             return redirect()->back();
+
         }
 
         else{
 //            dd("Wrong Password");
+            if (isset($offer_id))
+                return redirect()->route('item',['id' => $offer_id]);
             return redirect()->back();
         }
     }
@@ -94,8 +106,31 @@ Route::get('/loggingOut', function () {
     return view('indexPage');
 });
 
+Route::get('/SellAdmin', function () {
+    $detail=order_detail::all();
+
+//    return $detail;
+    return view('SellerAdmin',['detail'=>$detail]);
+});
+
 Route::get('/Sections', function () {
     return view('Sections');
+});
+
+Route::get('/About', function () {
+    return view('About_Page');
+});
+
+Route::get('/Contact', function () {
+    return view('Contact');
+});
+
+Route::get('/Privacy-Policy', function () {
+    return view('Privacy-Policy');
+});
+
+Route::get('/sign-complaints', function () {
+    return view('sign-complaints');
 });
 
 Route::get('/Item/{id}', function ($id) {
@@ -104,16 +139,18 @@ Route::get('/Item/{id}', function ($id) {
 //    return Redirect::to('/Item_single.php', array('1'));
 
     return view('Item_single');
-});
+})->name('item');
 
 
 Route::post('/purchases', function (Request $request) {
-    $token = $request -> token;
+//    $token = $request -> token;
+    $token = Session::get('token');
     $offer_id = $request ->offer_id;
     $count = $request -> count ;
     $token_key = str_random(10);
 //    dd($token, $count, $offer_id);
 //    $username = $request -> username;
+    if (isset($token))
     $user = users::where('remember_token', $token)->first();
 //    dd($user);
     $offer = offer::where('offer_id','=' , $offer_id)->first();
@@ -131,6 +168,49 @@ Route::post('/purchases', function (Request $request) {
     $order_detail -> save();
     Session::flash('p_token', $token_key);
     return view('purchased');
+    //dd($order_detail -> purches_token);
+});
+
+Route::post('/pre-purchase', function (Request $request) {
+//    $token = $request -> token;
+    $token = Session::get('token');
+
+    $offer_id = $request ->offer_id;
+    $count = $request -> count ;
+    //$token_key = str_random(10);
+//    dd($token, $count, $offer_id);
+//    $username = $request -> username;
+    if (isset($token))
+        $user = users::where('remember_token', $token)->first();
+//    dd($user);
+
+    if(!isset($user))
+    {
+//        dd('here');
+        Session::flash('offer_id', $offer_id);
+
+        return view('SignIn_First');
+    }
+
+
+    $offer = offer::where('offer_id','=' , $offer_id)->first();
+//    $order_detail = new order_detail();
+//    $order_detail -> order_detail_id = $token_key;
+//    $order_detail -> order_id = NULL;
+////    $order_detail -> offer_id = $offer_id;
+//    $order_detail -> offer_id = 11;
+//    $order_detail -> count = $count ;
+////    $order_detail -> item_price = $offer -> priceReal;
+//    $order_detail -> item_price = 1;
+//    $order_detail -> totalPriceReal = $count * $order_detail -> item_price;
+//    $order_detail -> totalPriceDiscounted = $count * $order_detail -> item_price;
+//    $order_detail -> purches_token = $token_key;
+//    $order_detail -> save();
+//    Session::flash('p_token', $token_key);
+    Session::flash('offer_id', $offer_id);
+//    Session::flash('token', $token);
+    Session::flash('count', $count);
+    return view('pre-purchase');
     //dd($order_detail -> purches_token);
 });
 Route::post('/home', 'HomeController@index');

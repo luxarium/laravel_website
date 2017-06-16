@@ -104,18 +104,6 @@
         });
     </script>
 
-<!---->
-<!--    <script type="text/javascript">-->
-<!--        /*var p = $( "scroller:first" );*/-->
-<!--        var p = document.getElementById("#test");-->
-<!--        var position = $("test").position();-->
-<!--        console.log(position);-->
-<!--        /*$( "scroller:last" ).text( "left: " + position.left + ", top: " + position.top );*/-->
-<!--        if($("test").position() > 0)-->
-<!--        {-->
-<!--            p.addClass("fadeIn animated");-->
-<!--        }-->
-<!--    </script>-->
 
     <script type="text/javascript">
         /* window.onload() = function () {
@@ -166,6 +154,20 @@
 
 
     </script>
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
 
 
     <!--[if lt IE 9]>
@@ -300,10 +302,12 @@
                         }?>">خروج</a></li>
                 </ul>
 
-                <ul class="nav sf-menu">
+                <ul class=" nav sf-menu">
                     <!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
-                    <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
+                    <li><a href="/About" class="Per-Font">درباره ما</a></li>
+                    <li><a href="/Contact" class="Per-Font">تماس با ما</a></li>
+<!--                    <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>-->
                     <li><a href="/Sections" class="Per-Font">تخفیف ها</a>
 <!--                        <ul>-->
 <!--                            <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>-->
@@ -317,6 +321,7 @@
 <!--                        </ul>-->
                     </li>
                     <li class="active"><a href="/" class="Per-Font">خانه</a></li>
+                    <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
                 </ul>
             </nav>
         </div>
@@ -368,7 +373,7 @@
             <div class="row " >
                 <ul id="test" class="list1" >
                     <li class="col-lg-4 col-md-4 col-sm-4 listbox1">
-                        <div class="box1 animate-box">
+                        <div class="box1 animate-box" style="background-color: #dfb366">
                             <a href="/Item/1">
                                 <figure><img src="img/Catg_1.jpg" alt=""></figure>
                                 <p class="Per-Font2">رستوران ها</p>
@@ -384,7 +389,7 @@
                         </div>
                     </li>
                     <li class="col-lg-4 col-md-4 col-sm-4 listbox3">
-                        <div class="box3 animate-box">
+                        <div class="box3 animate-box" style="background-color: #dfb366">
                             <a href="/Item/1 ">
                                 <figure><img src="img/Catg_3.jpg" alt=""></figure>
                                 <p class="Per-Font2">خدمات</p>
@@ -453,20 +458,28 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol" style="padding-top: 18px; padding-right: 5%">
+
+                <img id='hwlagwmdbrgwgwmdgwmd' style='cursor:pointer' onclick='window.open("https://trustseal.enamad.ir/Verify.aspx?id=49699&p=odshjzpghwmbjzpgjzpg", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")' alt='' src='https://trustseal.enamad.ir/logo.aspx?id=49699&p=aodszpfvkzoezpfvzpfv'/>
                 <!--<ul class="social_icons clearfix">
                      <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>
                      <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>
                      <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
                      <li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>
                 </ul>-->
+
+<!--                <a href="/sign-complaints" class="Per-Font-Parag" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>-->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
                 <a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol" >
+                <p class="footerpriv" style="color: wheat">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" style="font-family: 'B Zar'; font-size: 20px; color: wheat" href="/Privacy-Policy">قوانین و مقررات</a><!-- {%FOOTER_LINK} --></p>
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol" style="margin-top: 20px ">
+                <a href="/sign-complaints" class="Per-Font-Parag footerpriv" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>
+            </div>
+
         </div>
     </div>
 </footer>

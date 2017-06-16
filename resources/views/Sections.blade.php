@@ -62,6 +62,7 @@ try {
     $(window).load(function() {
     var $container = $('#container');
     //Run to initialise column sizes
+
     updateSize();
 
     //Load masonry when images all loaded
@@ -89,7 +90,7 @@ try {
     function updateSize() {
         $browserWidth = $container.width();
         $cols = 4;
-
+debugger;
         if ($browserWidth >= 1170) {
             $cols = 4;
         }
@@ -152,7 +153,7 @@ try {
 
     }
         // Initialize the gallery
-        //$('.thumb').touchTouch();
+//        $('.thumb').touchTouch();
 
     });
 
@@ -294,7 +295,7 @@ if(Session::get('token')){
                         if (isset($user)){
                             echo ("display : none");
                         }?>">ورود</a></li>
-                    <li><a id="log" href="\loggingOut" class="Per-Font" style="<?php
+                    <li><a id="log" href="/loggingOut" class="Per-Font" style="<?php
                         if (!isset($user)){
                             echo ("display : none");
                         }?>">خروج</a></li>
@@ -303,8 +304,10 @@ if(Session::get('token')){
                 <ul class="nav sf-menu">
                     <!--<li><a href="index.php" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
-                  <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
-                  <li><a href="/Sections" class="Per-Font">تخفیف ها</a>
+                  {{--<li><a href="index-2.html" class="Per-Font">شهر ها</a></li>--}}
+                    <li><a href="/About" class="Per-Font">درباره ما</a></li>
+                    <li><a href="/Contact" class="Per-Font">تماس با ما</a></li>
+                  <li class="active"><a href="/Sections" class="Per-Font">تخفیف ها</a>
                         {{--<ul>--}}
                       {{--<li><img src="img/arrowup.png" alt=""><a href="#">مرکزخرید</a></li>--}}
                       {{--<li><a href="#">هتل</a></li>--}}
@@ -316,7 +319,7 @@ if(Session::get('token')){
                       {{--</li>--}}
                     {{--</ul>--}}
                     </li>
-                    <li class="active"><a href="/" class="Per-Font">خانه</a></li>
+                    <li><a href="/" class="Per-Font">خانه</a></li>
                 </ul>
             </nav>
           </div>
@@ -344,9 +347,12 @@ if(Session::get('token')){
                   <div class="containerExtra">
                   <div id="container" class="clearfix Per-Div">
 
-                    <a href="/Item/1" class="element transition هتل thumb" data-category="transition">
-                    	<figure class="img-polaroid"><img src="img/Catg_2.jpg" alt=""></figure><span class="description">هتل شماره 1</span>
-                    </a>
+                    {{--<a href="/Item/1" class="element transition هتل thumb" data-category="transition">--}}
+                    	{{--<figure class="img-polaroid"><img src="img/Catg_2.jpg" alt=""></figure><span class="description">هتل شماره 1</span>--}}
+                    {{--</a>--}}
+                      <div class="element transition هتل thumb" data-category="transition">
+                          <a href="/Item/1" class="thumb"><figure class="img-polaroid"><img src="img/Catg_2.jpg" alt=""></figure></a><span class="description">هتل شماره 1</span>
+                      </div>
                     <div class="element transition هتل" data-category="transition">
                     	<a href="/Item/2" class="thumb"><figure class="img-polaroid"><img src="img/Event_1 - Copy.jpg" alt=""></figure></a><span class="description">هتل شماره 2</span>
                     </div>
@@ -388,20 +394,28 @@ if(Session::get('token')){
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol" style="padding-top: 18px; padding-right: 5%">
+                <img id='hwlagwmdbrgwgwmdgwmd' style='cursor:pointer' onclick='window.open("https://trustseal.enamad.ir/Verify.aspx?id=49699&p=odshjzpghwmbjzpgjzpg", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")' alt='' src='https://trustseal.enamad.ir/logo.aspx?id=49699&p=aodszpfvkzoezpfvzpfv'/>
+
                 <!--<ul class="social_icons clearfix">
                      <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>
                      <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>
                      <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
                      <li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>
                 </ul>-->
+
+                <!--                <a href="/sign-complaints" class="Per-Font-Parag" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>-->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-<!--                <a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>-->
+                <a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol" >
+                <p class="footerpriv" style="color: wheat">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" style="font-family: 'B Zar'; font-size: 20px; color: wheat" href="/Privacy-Policy">قوانین و مقررات</a><!-- {%FOOTER_LINK} --></p>
             </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol" style="margin-top: 20px ">
+                <a href="/sign-complaints" class="Per-Font-Parag footerpriv" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>
+            </div>
+
         </div>
     </div>
 </footer>

@@ -25,15 +25,15 @@ angular.module('luxarium', [])
         }
         $scope.init();
         $scope.items = [
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." , imagePath : "img/Event_1.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_3.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_4.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
-            {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
+            {title : "هتل نمونه" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." , imagePath : "img/Event_1.jpg"},
+            {title : "مرکز تفریحی نمونه" ,subTitle : "سوپر لوکس ترین مرکز تفریحی خاورمیانه" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
+            {title : "رستوران نمونه" ,subTitle : "سوپر لوکس ترین رستوران جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_3.jpg"},
+            {title : "فروشگاه های نمونه" ,subTitle : "سوپر لوکس ترین فروشگاه های ایران" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_4.jpg"},
+            // {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
+            // {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
+            // {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
+            // {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
+            // {title : "برج دبی" ,subTitle : "سوپر لوکس ترین هتل جهان" , description : "با ما اقامت با بیش از 40 درصد تخفیف را تجربه کنید." ,  imagePath : "img/Event_2.jpg"},
         ]
         $scope.details = function(item)
         {

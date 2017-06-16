@@ -5,7 +5,8 @@
 
 <?php
 		$token = session('token');
-		$item_id = session('item_id');
+		$offer_id = session('offer_id');
+		$count = session('count');
 
 //		echo ($token);
 //		echo ($item_id);
@@ -203,24 +204,23 @@ if(Session::get('token')){
 				</ul>
 
 				<ul class="nav sf-menu">
-					<!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
-                    <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
+
 					<li><a href="/About" class="Per-Font">درباره ما</a></li>
 					<li><a href="/Contact" class="Per-Font">تماس با ما</a></li>
-					<!--                    <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>-->
+					<!--<li><a href="index-2.html" class="Per-Font">شهر ها</a></li>-->
 					<li class="active"><a href="/Sections" class="Per-Font">تخفیف ها</a>
-						<!--                        <ul>-->
-						<!--                            <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>-->
-						<!--                            <li><a href="#">هتل</a></li>-->
-						<!--                            <li><a class="last" href="#">خدمات</a>-->
-						<!--                                <ul>-->
-						<!--                                    <li><a href="#">ماساژ</a></li>-->
-						<!--                                    <li><a class="last" href="#">آرایشگاه</a></li>-->
-						<!--                                </ul>-->
-						<!--                            </li>-->
-						<!--                        </ul>-->
+						                        {{--<ul>--}}
+						{{--<li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>--}}
+						{{--<li><a href="#">هتل</a></li>--}}
+						{{--<li><a class="last" href="#">خدمات</a>--}}
+						{{--<ul>--}}
+						{{--<li><a href="#">ماساژ</a></li>--}}
+						{{--<li><a class="last" href="#">آرایشگاه</a></li>--}}
+						{{--</ul>--}}
+						{{--</li>--}}
+						{{--</ul>--}}
 					</li>
-					<li ><a href="/" class="Per-Font">خانه</a></li>
+					<li><a href="/" class="Per-Font">خانه</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -504,159 +504,163 @@ if(Session::get('token')){
 					<div class="col-md-6 single-top-left">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="{{asset('img/Event_1.jpg')}}">
-									<div class="thumb-image detail_images"> <img src="{{asset('img/Event_1.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
-								</li>
+								{{--<li data-thumb="{{asset('img/Event_1.jpg')}}">--}}
+									{{--<div class="thumb-image detail_images"> <img src="{{asset('img/Event_1.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>--}}
+								{{--</li>--}}
 								<li data-thumb="{{asset('img/Event_2.jpg')}}">
 									 <div class="thumb-image"> <img src="{{asset('img/Event_2.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
 								</li>
-								<li data-thumb="{{asset('img/Event_3.jpg')}}">
-									<div class="thumb-image"> <img src="{{asset('img/Event_3.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>
-								</li> 
+								{{--<li data-thumb="{{asset('img/Event_3.jpg')}}">--}}
+									{{--<div class="thumb-image"> <img src="{{asset('img/Event_3.jpg')}}" data-imagezoom="true" class="img-responsive" alt="Groovy Apparel"></div>--}}
+								{{--</li> --}}
 							</ul>
 						</div>
 					</div>
 					<div class="col-md-6 single-top-right">
-						<h1 class="item_name Per-Header2" style="color: #0b0b0b">نمونه تفریحی 1</h1>
+						<h1 class="item_name Per-Header2" style="color: #0b0b0b">پیش فاکتور</h1>
 <!--						<p>This item will be delivered within 5-10 working days.</p>-->
-						<div class="rating">
-							<span class="starRating">
-								<input id="rating5" type="radio" name="rating" value="5">
-								<label for="rating5">5</label>
-								<input id="rating4" type="radio" name="rating" value="4" checked>
-								<label for="rating4">4</label>
-								<input id="rating3" type="radio" name="rating" value="3">
-								<label for="rating3">3</label>
-								<input id="rating2" type="radio" name="rating" value="2">
-								<label for="rating2">2</label>
-								<input id="rating1" type="radio" name="rating" value="1">
-								<label for="rating1">1</label>
-							</span>
-						</div>
+						{{--<div class="rating">--}}
+							{{--<span class="starRating">--}}
+								{{--<input id="rating5" type="radio" name="rating" value="5">--}}
+								{{--<label for="rating5">5</label>--}}
+								{{--<input id="rating4" type="radio" name="rating" value="4" checked>--}}
+								{{--<label for="rating4">4</label>--}}
+								{{--<input id="rating3" type="radio" name="rating" value="3">--}}
+								{{--<label for="rating3">3</label>--}}
+								{{--<input id="rating2" type="radio" name="rating" value="2">--}}
+								{{--<label for="rating2">2</label>--}}
+								{{--<input id="rating1" type="radio" name="rating" value="1">--}}
+								{{--<label for="rating1">1</label>--}}
+							{{--</span>--}}
+						{{--</div>--}}
 						<div class="single-price">
 							<ul class="Per-Font">
-								<li >225،000،000 <small class="Per-Font">10% تخفیف</small></li>
-								<li class="Per-Font"><del>250،000،000</del></li>
-								<li> </li>
-<!--								<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i>خرید</a></li>-->
+								<li class="Per-Font">نمونه تفریحی </li>
+                                <hr>
+								<li class="Per-Font">تعداد : {{$count}} عدد</li>
+								<li class="Per-Font">قیمت واحد: 225،000،000</li>
+								<li><hr> </li>
+                                <li style="font-size: 50px">225،000،000 <small class="Per-Font" style="font-size: 20px; color: #c41228">قابل پرداخت</small></li>
+                                <li class="Per-Font" style="font-size: 12px"><p style="font-family: 'Lucida Grande'; display: inline"> * </p>پس از پرداخت این مبلغ، با دریافت کد از سایت و ارائه به پذیرنده، می توانید از خدمت بدون پرداخت هیچ هزینه ی دیگری استفاده کنید.</li>
+                                <!--<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i>خرید</a></li>-->
 							</ul>
 						</div>
-						<p class="single-price-text Per-Font2">سفر لوکس به یادماندی را با قیمت باورنکردنی تجربه کنید</p>
+						{{--<p class="single-price-text Per-Font2">سفر لوکس به یادماندی را با قیمت باورنکردنی تجربه کنید</p>--}}
 						<div class="cbp-pgcontent aitssinglew3" id="mens_single">
 							{{--<button class="btn btn-danger agileits my-cart-btn Per-Font-btn" data-id="mens_single" data-name="Black Leather Jacket" data-summary="Black Leather Jacket" data-price="67.5" data-quantity="1" data-image="images/s1.jpg"><i class="fa fa-cart-plus" aria-hidden="true"></i>خرید</button>--}}
-							<form action="/pre-purchase " method="post">
+							<form action="/purchases" method="post">
 								<input type='hidden' name="token" value={{$token}} />
-								<input type='hidden' name="offer_id" value={{$item_id}} />
-								<input type='hidden' name="count" value=1 />
-								<input class="btn btn-danger agileits my-cart-btn Per-Font-btn" type="submit" value="خرید">
+								<input type='hidden' name="offer_id" value={{$offer_id}} />
+								<input type='hidden' name="count" value={{$count}} />
+								<input class="btn btn-danger agileits my-cart-btn Per-Font-btn" type="submit" value="تایید نهایی و پرداخت">
 							</form>
 							<div class="clearfix"></div>
 						</div>
 
-						<div class="agilesocialwthree">
-							<h4 class="Per-Header">این خدمت را به اشتراک بگذارید</h4>
-							<ul class="social-icons">
-								<li><a href="#" class="facebook w3ls" title="Go to Our Facebook Page"><i class="fa w3ls fa-facebook-square" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="twitter w3l" title="Go to Our Twitter Account"><i class="fa w3l fa-twitter-square" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="googleplus w3" title="Go to Our Google Plus Account"><i class="fa w3 fa-google-plus-square" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="instagram wthree" title="Go to Our Instagram Account"><i class="fa wthree fa-instagram" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
+						{{--<div class="agilesocialwthree">--}}
+							{{--<h4 class="Per-Header">این خدمت را به اشتراک بگذارید</h4>--}}
+							{{--<ul class="social-icons">--}}
+								{{--<li><a href="#" class="facebook w3ls" title="Go to Our Facebook Page"><i class="fa w3ls fa-facebook-square" aria-hidden="true"></i></a></li>--}}
+								{{--<li><a href="#" class="twitter w3l" title="Go to Our Twitter Account"><i class="fa w3l fa-twitter-square" aria-hidden="true"></i></a></li>--}}
+								{{--<li><a href="#" class="googleplus w3" title="Go to Our Google Plus Account"><i class="fa w3 fa-google-plus-square" aria-hidden="true"></i></a></li>--}}
+								{{--<li><a href="#" class="instagram wthree" title="Go to Our Instagram Account"><i class="fa wthree fa-instagram" aria-hidden="true"></i></a></li>--}}
+							{{--</ul>--}}
+						{{--</div>--}}
 					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
 
-			<div class="aitsaccordionw3layouts">
-				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingOne">
-							<h4 class="panel-title asd">
-								<a class="pa_italic Per-Font" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">توضیحات <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>
-								</a>
-							</h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-							<div class="panel-body panel_text">
-								<div class="scrollbar Per-Font-Parag" id="style-2">
-									توضیحات خدمت 1
-								</div>
-							</div>
-						</div>
-					</div>
+			{{--<div class="aitsaccordionw3layouts">--}}
+				{{--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">--}}
+					{{--<div class="panel panel-default">--}}
+						{{--<div class="panel-heading" role="tab" id="headingOne">--}}
+							{{--<h4 class="panel-title asd">--}}
+								{{--<a class="pa_italic Per-Font" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">توضیحات <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>--}}
+								{{--</a>--}}
+							{{--</h4>--}}
+						{{--</div>--}}
+						{{--<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">--}}
+							{{--<div class="panel-body panel_text">--}}
+								{{--<div class="scrollbar Per-Font-Parag" id="style-2">--}}
+									{{--توضیحات خدمت 1--}}
+								{{--</div>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
 
-					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingTwo">
-							<h4 class="panel-title asd">
-								<a class="pa_italic Per-Font" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">شرایط استفاده <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>
-								</a>
-							</h4>
-						</div>
-						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-							<div class="panel-body panel_text">
-								<div class="scrollbar Per-Font-Parag" id="style-2">
-									شرایط خدمت 1
-								</div>
-							</div>
-						</div>
-					</div>
+					{{--<div class="panel panel-default">--}}
+						{{--<div class="panel-heading" role="tab" id="headingTwo">--}}
+							{{--<h4 class="panel-title asd">--}}
+								{{--<a class="pa_italic Per-Font" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">شرایط استفاده <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>--}}
+								{{--</a>--}}
+							{{--</h4>--}}
+						{{--</div>--}}
+						{{--<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">--}}
+							{{--<div class="panel-body panel_text">--}}
+								{{--<div class="scrollbar Per-Font-Parag" id="style-2">--}}
+									{{--شرایط خدمت 1--}}
+								{{--</div>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
 
-					<!--<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingTwo">
-							<h4 class="panel-title asd">
-								<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">شرایط استفاده<span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>
-								</a>
-							</h4>
-						</div>
-						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-							<div class="accordion-image">
-								<div class="ac-img">
-									<a href="#"><img src="images/product-1.jpg" alt="Groovy Apparel"></a>
-								</div>
-								<div class="ac-img">
-									<a href="#"><img src="images/product-2.jpg" alt="Groovy Apparel"></a>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>-->
+					{{--<!--<div class="panel panel-default">--}}
+						{{--<div class="panel-heading" role="tab" id="headingTwo">--}}
+							{{--<h4 class="panel-title asd">--}}
+								{{--<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">شرایط استفاده<span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>--}}
+								{{--</a>--}}
+							{{--</h4>--}}
+						{{--</div>--}}
+						{{--<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">--}}
+							{{--<div class="accordion-image">--}}
+								{{--<div class="ac-img">--}}
+									{{--<a href="#"><img src="images/product-1.jpg" alt="Groovy Apparel"></a>--}}
+								{{--</div>--}}
+								{{--<div class="ac-img">--}}
+									{{--<a href="#"><img src="images/product-2.jpg" alt="Groovy Apparel"></a>--}}
+								{{--</div>--}}
+								{{--<div class="clearfix"></div>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>-->--}}
 
-					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingThree">
-							<h4 class="panel-title asd">
-								<a class="pa_italic Per-Font" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">نظرات کاربران (40+) <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>
-								</a>
-							</h4>
-						</div>
-						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-							<h3 class="Per-Font">"سفری بسیار جذاب"</h3>
-							<h4 class="Per-Font-btn">کاربر 1. کاربر تایید شده</h4>
-							<p class="Per-Font-Parag">نظرات کاربر 1 درباره سفر</p>
-<!--							<span>5 Stars</span>-->
-							<a href="#" class="next Per-Font-btn">نظر بعدی &rarr;</a>
-						</div>
-					</div>
+					{{--<div class="panel panel-default">--}}
+						{{--<div class="panel-heading" role="tab" id="headingThree">--}}
+							{{--<h4 class="panel-title asd">--}}
+								{{--<a class="pa_italic Per-Font" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">نظرات کاربران (40+) <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>--}}
+								{{--</a>--}}
+							{{--</h4>--}}
+						{{--</div>--}}
+						{{--<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">--}}
+							{{--<h3 class="Per-Font">"سفری بسیار جذاب"</h3>--}}
+							{{--<h4 class="Per-Font-btn">کاربر 1. کاربر تایید شده</h4>--}}
+							{{--<p class="Per-Font-Parag">نظرات کاربر 1 درباره سفر</p>--}}
+{{--<!--							<span>5 Stars</span>-->--}}
+							{{--<a href="#" class="next Per-Font-btn">نظر بعدی &rarr;</a>--}}
+						{{--</div>--}}
+					{{--</div>--}}
 
-					<!--<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="headingFour">
-							<h4 class="panel-title asd">
-								<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Shipping Info <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>
-								</a>
-							</h4>
-						</div>
-						<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-							<h3>Shipping</h3>
-							<ul class="ship">
-								<li class="day"><i class="fa fa-calendar" aria-hidden="true"></i> 5-10 Business Days</li>
-								<li class="home"><i class="fa fa-truck" aria-hidden="true"></i> Free Home Delivery</li>
-								<li class="cod"><i class="fa fa-male" aria-hidden="true"></i> Cash On Delivery Available*</li>
-							</ul>
-						</div>
-					</div>-->
-				</div>
-			</div>
+					{{--<!--<div class="panel panel-default">--}}
+						{{--<div class="panel-heading" role="tab" id="headingFour">--}}
+							{{--<h4 class="panel-title asd">--}}
+								{{--<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Shipping Info <span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-up" aria-hidden="true"></i>--}}
+								{{--</a>--}}
+							{{--</h4>--}}
+						{{--</div>--}}
+						{{--<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">--}}
+							{{--<h3>Shipping</h3>--}}
+							{{--<ul class="ship">--}}
+								{{--<li class="day"><i class="fa fa-calendar" aria-hidden="true"></i> 5-10 Business Days</li>--}}
+								{{--<li class="home"><i class="fa fa-truck" aria-hidden="true"></i> Free Home Delivery</li>--}}
+								{{--<li class="cod"><i class="fa fa-male" aria-hidden="true"></i> Cash On Delivery Available*</li>--}}
+							{{--</ul>--}}
+						{{--</div>--}}
+					{{--</div>-->--}}
+				{{--</div>--}}
+			{{--</div>--}}
 
-		</div>
+		{{--</div>--}}
 
 		</div>
 	</div>
@@ -685,36 +689,35 @@ if(Session::get('token')){
 
 
 
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-4 footercol" style="padding-top: 18px; padding-right: 5%">
-				<!--<ul class="social_icons clearfix">
-                     <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>
-                     <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>
-                     <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
-                     <li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>
-                </ul>-->
+	<!-- Footer -->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4 footercol" style="padding-top: 18px; padding-right: 5%">
+                            <img id='hwlagwmdbrgwgwmdgwmd' style='cursor:pointer' onclick='window.open("https://trustseal.enamad.ir/Verify.aspx?id=49699&p=odshjzpghwmbjzpgjzpg", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30")' alt='' src='https://trustseal.enamad.ir/logo.aspx?id=49699&p=aodszpfvkzoezpfvzpfv'/>
 
-				<!--                <a href="/sign-complaints" class="Per-Font-Parag" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>-->
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-				<a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 footercol" >
-				<p class="footerpriv" style="color: wheat">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" style="font-family: 'B Zar'; font-size: 20px; color: wheat" href="/Privacy-Policy">قوانین و مقررات</a><!-- {%FOOTER_LINK} --></p>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 footercol" style="margin-top: 20px ">
-				<a href="/sign-complaints" class="Per-Font-Parag footerpriv" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>
-			</div>
+                            <!--<ul class="social_icons clearfix">
+                                 <li><a href="#"><img src="img/follow_icon1.png" alt=""></a></li>
+                                 <li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>
+                                 <li><a href="#"><img src="img/follow_icon3.png" alt=""></a></li>
+                                 <li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>
+                            </ul>-->
 
-		</div>
-	</div>
-</footer>
+							<!--                <a href="/sign-complaints" class="Per-Font-Parag" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>-->
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
+							<a class="smalllogo2 logo" href="/"><img src="img/Logo_Footer_Full.png" alt=""></a>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 footercol" >
+							<p class="footerpriv" style="color: wheat">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" style="font-family: 'B Zar'; font-size: 20px; color: wheat" href="/Privacy-Policy">قوانین و مقررات</a><!-- {%FOOTER_LINK} --></p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 footercol" style="margin-top: 20px ">
+							<a href="/sign-complaints" class="Per-Font-Parag footerpriv" style="color: wheat; font-size: 20px">ثبت شکایات، انتقادات و پیشنهادات</a>
+						</div>
 
-
-
-
+					</div>
+				</div>
+			</footer>
 
 
 

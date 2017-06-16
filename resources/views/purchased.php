@@ -305,20 +305,22 @@
                 <ul class="nav sf-menu">
                     <!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
                     <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
-                    <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>
-                    <li><a href="/Sections" class="Per-Font">تخفیف ها</a>
-<!--                        <ul>-->
-<!--                            <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>-->
-<!--                            <li><a href="#">هتل</a></li>-->
-<!--                            <li><a class="last" href="#">خدمات</a>-->
-<!--                                <ul>-->
-<!--                                    <li><a href="#">ماساژ</a></li>-->
-<!--                                    <li><a class="last" href="#">آرایشگاه</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-<!--                        </ul>-->
+                    <li><a href="/About" class="Per-Font">درباره ما</a></li>
+                    <li><a href="/Contact" class="Per-Font">تماس با ما</a></li>
+                    <!--                    <li><a href="index-2.html" class="Per-Font">شهر ها</a></li>-->
+                    <li class="active"><a href="/Sections" class="Per-Font">تخفیف ها</a>
+                        <!--                        <ul>-->
+                        <!--                            <li><img src="img/arrowup.png" alt=""><a href="#">رستوران</a></li>-->
+                        <!--                            <li><a href="#">هتل</a></li>-->
+                        <!--                            <li><a class="last" href="#">خدمات</a>-->
+                        <!--                                <ul>-->
+                        <!--                                    <li><a href="#">ماساژ</a></li>-->
+                        <!--                                    <li><a class="last" href="#">آرایشگاه</a></li>-->
+                        <!--                                </ul>-->
+                        <!--                            </li>-->
+                        <!--                        </ul>-->
                     </li>
-                    <li class="active"><a href="/" class="Per-Font">خانه</a></li>
+                    <li ><a href="/" class="Per-Font">خانه</a></li>
                 </ul>
             </nav>
         </div>
